@@ -1,54 +1,54 @@
 <svelte:options accessors={true} />
 
 <script lang="ts">
-  import {lockscroll, createLockScrollStore} from '@svelte-put/lockscroll';
-  import {Cross1} from 'radix-icons-svelte';
-  import {getContext, onDestroy, onMount} from 'svelte';
-  import type {GPTOptions} from './plugin-gpt';
+import { lockscroll, createLockScrollStore } from "@svelte-put/lockscroll";
+import { Cross } from "lucide-svelte";
+import { getContext, onDestroy, onMount } from "svelte";
+import type { GPTOptions } from "./plugin-gpt";
 
-  const options: GPTOptions = getContext('options');
+const options: GPTOptions = getContext("options");
 
-  let prompt = '';
-  let submiting = false;
-  let completion = '';
-  let input: HTMLElement;
+let prompt = "";
+let submiting = false;
+let completion = "";
+let input: HTMLElement;
 
-  export let onApply = (text: string) => {};
-  export let onClose = () => {};
+export let onApply = (text: string) => {};
+export let onClose = () => {};
 
-  // external access {{
-  export const onShow = () => {
-    requestAnimationFrame(() => input.focus());
-  };
+// external access {{
+export const onShow = () => {
+	requestAnimationFrame(() => input.focus());
+};
 
-  export const onHide = () => {
-    prompt = '';
-    completion = '';
-    submiting = false;
-  };
-  // }}
+export const onHide = () => {
+	prompt = "";
+	completion = "";
+	submiting = false;
+};
+// }}
 
-  export const clearData = () => {
-    completion = '';
-    prompt = '';
-  };
+export const clearData = () => {
+	completion = "";
+	prompt = "";
+};
 
-  const onSubmit = async (e: any) => {
-    if (submiting) return;
-    submiting = true;
-    e.preventDefault();
-    completion = await options.query(prompt);
-    submiting = false;
-  };
+const onSubmit = async (e: any) => {
+	if (submiting) return;
+	submiting = true;
+	e.preventDefault();
+	completion = await options.query(prompt);
+	submiting = false;
+};
 
-  const locked = createLockScrollStore();
+const locked = createLockScrollStore();
 
-  onMount(() => {
-    $locked = true;
-  });
-  onDestroy(() => {
-    $locked = false;
-  });
+onMount(() => {
+	$locked = true;
+});
+onDestroy(() => {
+	$locked = false;
+});
 </script>
 
 <svelte:body use:lockscroll={locked} />
@@ -128,6 +128,6 @@
     }}
     class="absolute -top-2 -right-2 rounded-full p-1 bg-background border border-border"
   >
-    <Cross1 />
+    <Cross />
   </button>
 </div>
