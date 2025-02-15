@@ -1,68 +1,74 @@
 {
-  "name": "nextlint",
-  "version": "1.5.5",
-  "private": false,
-  "author": "lynhan318",
-  "description": "Nextlint is a WYSIWYG editor, writen in Svelte",
-  "scripts": {
-    "build": "turbo run build --parallel",
-    "dev": "pnpm run --parallel --filter './packages/**' dev",
-    "dev:packages": "pnpm run --parallel --filter svelte-editor... dev",
-    "lint": "turbo run lint",
-    "build:packages": "rollup -c",
-    "changeset": "changeset",
-    "dev:lib": "turbo run --parallel --filter='./packages/*' dev",
-    "clean": "rm -rf node_modules ./**/*/{node_modules,build,dist,.turbo,.svelte-kit,.pnpm}",
-    "version": "changeset version",
-    "release": "pnpm build && changeset publish",
-    "release:tag": "changeset tag"
-  },
-  "devDependencies": {
-    "@atomico/rollup-plugin-sizes": "^1.1.4",
-    "@babel/core": "^7.23.3",
-    "@changesets/changelog-github": "^0.4.8",
-    "@changesets/cli": "^2.26.2",
-    "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@typescript-eslint/eslint-plugin": "^6.11.1-alpha.12",
-    "@typescript-eslint/parser": "^6.11.1-alpha.12",
-    "eslint": "^8.53.0",
-    "eslint-plugin-import": "^2.29.0",
-    "eslint-plugin-svelte": "^2.35.0",
-    "eslint-plugin-svelte3": "^4.0.0",
-    "minimist": "^1.2.8",
-    "prettier-plugin-svelte": "^3.1.0",
-    "rollup": "^4.4.0",
-    "rollup-plugin-auto-external": "^3.0.0-alpha.0",
-    "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-sourcemaps": "^0.6.3",
-    "rollup-plugin-svelte": "^7.1.6",
-    "rollup-plugin-typescript2": "^0.36.0",
-    "svelte-preprocess": "5.1.0",
-    "turbo": "latest",
-    "vite": "4.5.0"
-  },
-  "keywords": [
-    "Svelte",
-    "Rich Text Editor",
-    "WYSIWYG",
-    "Nextlint",
-    "tiptap",
-    "javascript",
-    "typescript",
-    "gpt"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sveltor/nextlint.git"
-  },
-  "license": "MIT",
-  "type": "module",
-  "volta": {
-    "node": "18.12.1"
-  },
-  "dependencies": {
-    "acorn": "^8.11.2"
-  }
+	"name": "nextlint",
+	"version": "1.5.5",
+	"private": false,
+	"author": "lynhan318",
+	"description": "Nextlint is a WYSIWYG editor, writen in Svelte",
+	"scripts": {
+		"build": "turbo run build --parallel",
+		"dev": "pnpm run --parallel --filter './packages/**' dev",
+		"dev:packages": "pnpm run --parallel --filter svelte-editor... dev",
+		"lint": "turbo run lint",
+		"build:packages": "rollup -c",
+		"changeset": "changeset",
+		"dev:lib": "turbo run --parallel --filter='./packages/*' dev",
+		"clean": "rm -rf node_modules ./**/*/{node_modules,build,dist,.turbo,.svelte-kit,.pnpm}",
+		"version": "changeset version",
+		"release": "pnpm build && changeset publish",
+		"release:tag": "changeset tag"
+	},
+	"devDependencies": {
+		"@atomico/rollup-plugin-sizes": "^1.1.4",
+		"@babel/core": "^7.26.9",
+		"@changesets/changelog-github": "^0.5.0",
+		"@changesets/cli": "^2.27.12",
+		"@rollup/plugin-babel": "^6.0.4",
+		"@rollup/plugin-commonjs": "^28.0.2",
+		"@rollup/plugin-node-resolve": "^16.0.0",
+		"@typescript-eslint/eslint-plugin": "^8.24.0",
+		"@typescript-eslint/parser": "^8.24.0",
+		"eslint": "^9.20.1",
+		"eslint-plugin-import": "^2.31.0",
+		"eslint-plugin-svelte": "^2.46.1",
+		"eslint-plugin-svelte3": "^4.0.0",
+		"minimist": "^1.2.8",
+		"prettier-plugin-svelte": "^3.3.3",
+		"rollup": "^4.34.7",
+		"rollup-plugin-auto-external": "3.0.0-alpha.0",
+		"rollup-plugin-postcss": "^4.0.2",
+		"rollup-plugin-sourcemaps": "^0.6.3",
+		"rollup-plugin-svelte": "^7.2.2",
+		"rollup-plugin-typescript2": "^0.36.0",
+		"svelte-preprocess": "6.0.3",
+		"turbo": "^2.4.2",
+		"vite": "6.1.0"
+	},
+	"keywords": [
+		"Svelte",
+		"Rich Text Editor",
+		"WYSIWYG",
+		"Nextlint",
+		"tiptap",
+		"javascript",
+		"typescript",
+		"gpt"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sveltor/nextlint.git"
+	},
+	"license": "MIT",
+	"type": "module",
+	"volta": {
+		"node": "22.13.1"
+	},
+	"dependencies": {
+		"acorn": "^8.14.0"
+	},
+	"packageManager": "pnpm@9.15.3",
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"esbuild"
+		]
+	}
 }
